@@ -1,7 +1,19 @@
-import {saludar} from './js/componentes.js';
 import './styles.css'
+import{Todo,TodoList} from './class/index'
+import { createTodoHtml } from './js/componentes';
+
+export const todoList = new TodoList()
+
+const newTodo = new Todo('Aprender Javascript');
+console.log(todoList.todos)
+
+// todoList.todos[0].imprimirClase()
 
 
-const nombre = 'Braulio';
+newTodo.imprimirClase();
 
-saludar(nombre);
+
+
+todoList.todos.forEach(element => {
+    createTodoHtml(element)
+});
